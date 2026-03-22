@@ -1,0 +1,29 @@
+{
+    "name": "SDET Tech. Lunch Confirmation",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Automate lunch confirmation",
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "scripting",
+        "storage"
+    ],
+    "host_permissions": [
+        "https://lunch-booking.netlify.app/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://lunch-booking.netlify.app/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}

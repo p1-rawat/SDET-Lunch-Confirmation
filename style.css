@@ -1,0 +1,47 @@
+.heading-lunch {
+  text-align: center;
+  margin-top: 10px;
+  text-shadow: 1px 1px 3px rgba(6, 2, 65, 0.942);
+}
+
+body {
+  width: 220px;
+  font-family: Arial;
+  text-align: center;
+  padding: 10px;
+}
+
+input {
+  width: 180px;
+  padding: 6px;
+  margin: 8px 0;
+}
+
+#startBtn {
+  display: block;
+  margin: 12px auto;
+  padding: 8px 40px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(160deg, #5a76f5, #3d5ae0);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(80, 100, 230, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+#startBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(80, 100, 230, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#startBtn:active {
+  transform: translateY(1px);
+}
+
+#status {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+}
