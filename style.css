@@ -45,3 +45,7 @@ input {
   font-weight: bold;
   color: green;
 }
+
+#empId::placeholder {
+  font-size: 11px;
+}
