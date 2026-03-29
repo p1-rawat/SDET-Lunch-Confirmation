@@ -8,11 +8,12 @@ async function fetchMenu() {
   const container = document.getElementById("menu-container");
 
   try {
+    container.innerHTML = "<p class='loading-menu'> &nbsp; Loading Menu...</p>";
     const response = await fetch("https://lunch-booking.netlify.app/api/menu/today");
     // const data = await response.json();
 
     const data = {
-        menu_text: "Shahi Paneer\nMix Veg\nRice\nRoti\nRaita"
+      menu_text: "Shahi Paneer\nMix Veg\nRice\nRoti\nRaita"
     };
 
     renderMenu(data.menu_text);
@@ -56,8 +57,8 @@ function renderMenu(menuText) {
             </th>
         </tr>
         <tr>
-            <th>Today's Special</th>
-            <th>Usual</th>
+            <th id="tableHead" >Today's Special</th>
+            <th id="tableHead" >Usual</th>
         </tr>
         </thead>
         <tbody>
