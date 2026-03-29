@@ -48,16 +48,16 @@ function renderMenu(menuText) {
 
     // Build table
     let tableHTML = `
-    <table style="border-collapse: collapse; width: 100%;">
-        <thead>
+    <table class="table table-sm table-bordered mt-3 mb-1" style="font-size: 13px;">
+        <thead class="table-light">
         <tr>
-            <th id="tableHead" colspan="2">
+            <th id="tableHead" colspan="2" class="text-center">
             Lunch Menu
             </th>
         </tr>
         <tr>
-            <th style="border: 1px solid #ccc; padding: 8px;">Today's Special</th>
-            <th style="border: 1px solid #ccc; padding: 8px;">Usual</th>
+            <th>Today's Special</th>
+            <th>Usual</th>
         </tr>
         </thead>
         <tbody>
@@ -69,12 +69,8 @@ function renderMenu(menuText) {
     for (let i = 0; i < maxLength; i++) {
     tableHTML += `
         <tr>
-        <td style="border: 1px solid #ccc; padding: 8px;">
-            ${specialItems[i] || ""}
-        </td>
-        <td style="border: 1px solid #ccc; padding: 8px;">
-            ${usualItems[i] || ""}
-        </td>
+        <td>${specialItems[i] || ""}</td>
+        <td>${usualItems[i] || ""}</td>
         </tr>
     `;
     }
