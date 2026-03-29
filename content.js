@@ -30,7 +30,7 @@ async function automate(empId) {
         (await waitFor(".flip-front h3")).click();
         (await waitFor("#confirmBtn")).click();
 
-        setTimeout(() => { window.close(); }, 4000);
+        setTimeout(() => { window.close(); }, 2000);
     } catch (e) {
         console.error("Lunch Automation failed:", e);
     }

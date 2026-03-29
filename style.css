@@ -1,3 +1,4 @@
+
 .heading-lunch {
   text-align: center;
   margin-top: 10px;
@@ -48,4 +49,28 @@ input {
 
 #empId::placeholder {
   font-size: 11px;
+}
+
+.menu-empty {
+  text-align: center;
+  color: #ff8c00;
+  font-weight: 600;
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.loading-menu-failed {
+  text-align: center;
+  color: red;
+}
+
+#tableHead {
+  border: 1px solid #ccc;
+  padding: 8px;
+  background: #e5e7eb;
+  color: #1f2933;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
 }
