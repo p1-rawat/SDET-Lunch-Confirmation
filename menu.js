@@ -10,11 +10,7 @@ async function fetchMenu() {
   try {
     container.innerHTML = "<p class='loading-menu'> &nbsp; Loading Menu...</p>";
     const response = await fetch("https://lunch-booking.netlify.app/api/menu/today");
-    // const data = await response.json();
-
-    const data = {
-      menu_text: "Shahi Paneer\nMix Veg\nRice\nRoti\nRaita"
-    };
+    const data = await response.json();
 
     renderMenu(data.menu_text);
   } catch (error) {
@@ -49,7 +45,7 @@ function renderMenu(menuText) {
 
     // Build table
     let tableHTML = `
-    <table class="table table-sm table-bordered mt-3 mb-1" style="font-size: 13px;">
+    <table class="table table-sm table-bordered mt-3 mb-1 rounded-table" style="font-size: 13px;">
         <thead class="table-light">
         <tr>
             <th id="tableHead" colspan="2" class="text-center">
