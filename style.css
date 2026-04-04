@@ -1,4 +1,3 @@
-
 .heading-lunch {
   text-align: center;
   margin-top: 10px;
@@ -10,6 +9,71 @@ body {
   font-family: Arial;
   text-align: center;
   padding: 10px;
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+label {
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  right: 16px;
+  display: block;
+  background: #ebebeb;
+  border-radius: 30px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4), inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#dark-mode-toggle {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+label[for="dark-mode-toggle"]::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 2.5px;
+  left: 4px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 50%;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#dark-mode-toggle:checked+label {
+  background: #242424;
+}
+
+#dark-mode-toggle:checked+label::after {
+  left: calc(100% - 4px);
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label,
+label::after {
+  transition: 0.3s;
+}
+
+label[for="dark-mode-toggle"] img {
+  position: absolute;
+  width: 16px;
+  top: 7px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+label[for="dark-mode-toggle"] img:first-child {
+  left: 8px;
+}
+
+label[for="dark-mode-toggle"] img:last-child {
+  right: 8px;
 }
 
 input {

@@ -2,8 +2,24 @@ const startBtn = document.getElementById("startBtn");
 const empInput = document.getElementById("empId");
 const status = document.getElementById("status");
 
-chrome.storage.local.get(["empId"], (data) => {
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+chrome.storage.local.get(["empId", "theme"], (data) => {
     if (data.empId) empInput.value = data.empId;
+
+    if (data.theme === "dark") {
+        document.documentElement.setAttribute("data-bs-theme", "dark");
+        darkModeToggle.checked = true;
+    } else {
+        document.documentElement.setAttribute("data-bs-theme", "light");
+        darkModeToggle.checked = false;
+    }
+});
+
+darkModeToggle.addEventListener("change", () => {
+    const newTheme = darkModeToggle.checked ? "dark" : "light";
+    document.documentElement.setAttribute("data-bs-theme", newTheme);
+    chrome.storage.local.set({ theme: newTheme });
 });
 
 empInput.addEventListener("keydown", (e) => {

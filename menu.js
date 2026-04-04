@@ -24,7 +24,7 @@ function renderMenu(menuText) {
   const container = document.getElementById("menu-container");
 
   // If null or empty
-  if(!menuText) {
+  if (!menuText) {
     container.innerHTML = '<p class="menu-empty">Lunch Menu is not available yet!</p>';
     return;
   }
@@ -37,14 +37,14 @@ function renderMenu(menuText) {
 
   // Build table
   // Define usual items
-    const usualItemsList = ["Rice", "Roti", "Raita"];
+  const usualItemsList = ["Rice", "Roti", "Raita"];
 
-    // Split items
-    const usualItems = items.filter(item => usualItemsList.includes(item));
-    const specialItems = items.filter(item => !usualItemsList.includes(item));
+  // Split items
+  const usualItems = items.filter(item => usualItemsList.includes(item));
+  const specialItems = items.filter(item => !usualItemsList.includes(item));
 
-    // Build table
-    let tableHTML = `
+  // Build table
+  let tableHTML = `
     <table class="table table-sm table-bordered mt-3 mb-1 rounded-table" style="font-size: 13px;">
         <thead class="table-light">
         <tr>
@@ -60,19 +60,19 @@ function renderMenu(menuText) {
         <tbody>
     `;
 
-    // max rows
-    const maxLength = Math.max(specialItems.length, usualItems.length);
+  // max rows
+  const maxLength = Math.max(specialItems.length, usualItems.length);
 
-    for (let i = 0; i < maxLength; i++) {
+  for (let i = 0; i < maxLength; i++) {
     tableHTML += `
         <tr>
         <td>${specialItems[i] || ""}</td>
         <td>${usualItems[i] || ""}</td>
         </tr>
     `;
-    }
+  }
 
-    tableHTML += `
+  tableHTML += `
         </tbody>
     </table>
     `;
