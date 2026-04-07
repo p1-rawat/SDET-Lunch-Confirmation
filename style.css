@@ -143,3 +143,23 @@ input {
   border-radius: 6px;
   overflow: hidden;
 }
+
+#PR {
+  width: 35px;
+  position: relative;
+  top: -10px;
+  animation: blink 4s infinite;
+
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
