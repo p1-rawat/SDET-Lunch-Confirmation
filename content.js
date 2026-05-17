@@ -16,21 +16,20 @@ async function automate(empId) {
 
     try {
         // Step 1: Login
-        (await waitFor(".plate")).click();
+        (await waitFor(".w-full.h-full.object-cover")).click();
         const input = await waitFor("input");
         input.value = empId;
         input.dispatchEvent(new Event('input', { bubbles: true }));
-        (await waitFor("#loginBtn")).click();
+        (await waitFor("#loginBtnText")).click();
 
         // Step 2: Check Menu
-        const dish = await waitFor("#dishList .dish-item:first-child .dish-name");
-        if (dish.textContent.includes("Menu not set yet")) return;
+        const menuItem = await waitFor("#menuItemsList li span:last-child");
+        if (menuItem.textContent.includes("No menu set for today yet")) return;
 
         // Step 3: Confirm Booking
-        (await waitFor(".flip-front h3")).click();
-        (await waitFor("#confirmBtn")).click();
+        (await waitFor("#reserveBtn")).click();
 
-        setTimeout(() => { window.close(); }, 2000);
+        setTimeout(() => { window.close(); }, 4000);
     } catch (e) {
         console.error("Lunch Automation failed:", e);
     }
