@@ -27,10 +27,13 @@ async function automate(empId) {
         if (menuItem.textContent.includes("No menu set for today yet")) return;
 
         // Step 3: Confirm Booking
-        (await waitFor("#reserveBtn")).click();
-
-        setTimeout(() => { window.close(); }, 4000);
-    } catch (e) {
+        const reserveBtn = await waitFor("#reserveBtn");
+        if(reserveBtn) {
+            reserveBtn.click();
+            setTimeout(() => { window.close(); }, 4000);
+        }
+    }
+    catch(e) {
         console.error("Lunch Automation failed:", e);
     }
 }
