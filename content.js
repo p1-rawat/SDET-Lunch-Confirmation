@@ -19,7 +19,6 @@ async function automate(empId) {
         (await waitFor(".w-full.h-full.object-cover")).click();
         const input = await waitFor("input");
         input.value = empId;
-        input.dispatchEvent(new Event('input', { bubbles: true }));
         (await waitFor("#loginBtnText")).click();
 
         // Step 2: Check Menu
@@ -30,7 +29,7 @@ async function automate(empId) {
         const reserveBtn = await waitFor("#reserveBtn");
         if(reserveBtn) {
             reserveBtn.click();
-            setTimeout(() => { window.close(); }, 4000);
+            setTimeout(() => { window.close(); }, 6000);
         }
     }
     catch(e) {
