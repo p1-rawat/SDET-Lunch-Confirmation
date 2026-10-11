@@ -58,7 +58,8 @@ async function automate(empId) {
             reserveBtn.click();
             await new Promise(r => setTimeout(r, 1000));
             const confirmBtn = Array.from(document.querySelectorAll("button, [role='button'], input[type='button']"))
-                .find(btn => btn.offsetParent !== null && /^(yes|confirm|reserve)$/i.test(btn.textContent.trim()));
+                .find(btn => btn !== reserveBtn && btn.offsetParent !== null
+                    && /^(yes\s*,\s*confirm|yes|confirm|reserve)$/i.test(btn.textContent.trim()));
             if (confirmBtn) confirmBtn.click();
             setTimeout(() => { window.close(); }, 6000);
         }
