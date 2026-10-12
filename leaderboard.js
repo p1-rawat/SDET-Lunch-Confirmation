@@ -16,7 +16,7 @@ leaderboardBtn.addEventListener('click', async () => {
         const rows = Array.isArray(data?.scores) ? data.scores.slice(0, 5) : [];
 
         leaderboard.innerHTML = `
-            <table>
+            <table class="leaderboard-table">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -24,12 +24,15 @@ leaderboardBtn.addEventListener('click', async () => {
                     </tr>
                 </thead>
                 <tbody>
-                    ${rows.map((item) => `
-                        <tr>
-                            <td>${item?.employee_name ?? 'N/A'}</td>
-                            <td>${item?.total_points ?? 0}</td>
-                        </tr>
-                    `).join('')}
+                    ${rows.map((item, index) => {
+                        const rankClass = index === 0 ? 'first-place' : index === 1 ? 'second-place' : index === 2 ? 'third-place' : '';
+                        return `
+                            <tr class="${rankClass}">
+                                <td>${item?.employee_name ?? 'N/A'} ${index === 0 ? '👑 ' : ''}</td>
+                                <td>${item?.total_points ?? 0}</td>
+                            </tr>
+                        `;
+                    }).join('')}
                 </tbody>
             </table>
         `;

@@ -165,6 +165,73 @@ input {
 }
 
 #leaderboardBtn {
+  width: 100%;
   font-size: 14px;
-  border-radius: 12px;
+  color: black;
+  border-radius: 8px;
+  background: #dfe3e8;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+
+.leaderboard-table th {
+  background: #3981e7;
+  color: #ffffff;
+}
+
+.leaderboard-table td {
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.first-place td {
+  color: #b8860b;
+  font-weight: 700;
+}
+
+.second-place td {
+  color: #7a7a7a;
+  font-weight: 700;
+}
+
+.third-place td {
+  color: #8a4b1a;
+  font-weight: 700;
+}
+
+#dark-mode-toggle:checked ~ #leaderboard .leaderboard-table {
+  background: #1f2937;
+}
+
+#dark-mode-toggle:checked ~ #leaderboard .leaderboard-table td {
+  color: #f3f4f6;
+}
+
+#dark-mode-toggle:checked ~ #leaderboard .leaderboard-table th {
+  color: #ffffff;
+}
+
+#dark-mode-toggle:checked ~ #leaderboard .first-place td {
+  color: #d4af37;
+}
+
+#dark-mode-toggle:checked ~ #leaderboard .second-place td {
+  color: #b0b0b0;
+}
+
+#dark-mode-toggle:checked ~ #leaderboard .third-place td {
+  color: #b87333;
 }
