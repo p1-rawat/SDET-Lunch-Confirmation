@@ -10,7 +10,7 @@
         "storage"
     ],
     "host_permissions": [
-        "https://lunch-booking.netlify.app/*"
+        "https://lunch.sdettech.com/*"
     ],
     "action": {
         "default_popup": "popup.html",
@@ -19,7 +19,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://lunch-booking.netlify.app/*"
+                "https://lunch.sdettech.com/*"
             ],
             "js": [
                 "content.js"

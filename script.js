@@ -41,6 +41,6 @@ startBtn.addEventListener("click", () => {
     status.style.color = "blue";
 
     chrome.storage.local.set({ empId, automationEnabled: true }, () => {
-        chrome.tabs.create({ url: "https://lunch-booking.netlify.app/" });
+        chrome.tabs.create({ url: "https://lunch.sdettech.com/" });
     });
 });

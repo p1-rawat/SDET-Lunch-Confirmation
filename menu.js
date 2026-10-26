@@ -9,7 +9,7 @@ async function fetchMenu() {
 
   try {
     container.innerHTML = "<p class='loading-menu'> &nbsp; Loading Menu...</p>";
-    const response = await fetch("https://lunch-booking.netlify.app/api/menu/today");
+    const response = await fetch("https://lunch.sdettech.com/api/menu/today");
     const data = await response.json();
 
     renderMenu(data.menu_text);

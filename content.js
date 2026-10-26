@@ -1,7 +1,6 @@
 chrome.storage.local.get(["automationEnabled", "empId"], (data) => {
     if (data.automationEnabled && data.empId) {
         chrome.storage.local.set({ automationEnabled: false });
-        // Small delay to ensure the portal's initial JS has settled
         setTimeout(() => automate(data.empId), 2000);
     }
 });

@@ -7,7 +7,7 @@ leaderboardBtn.addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch('https://lunch-booking.netlify.app/api/bookings/leaderboard');
+        const response = await fetch('https://lunch.sdettech.com/api/bookings/leaderboard');
         if (!response.ok) {
             throw new Error('Failed to fetch leaderboard data');
         }
